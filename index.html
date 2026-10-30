@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drawing Notebook</title>
+<meta name="description" content="A free portrait drawing notebook to print: eyes, noses, lips, ears and whole faces, with the method. Flip through it, then download the PDF.">
+<link rel="canonical" href="https://unwakingart.github.io/drawing-notebook/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Drawing notebook · unwakingart">
+<meta property="og:description" content="A free portrait drawing notebook to print: eyes, noses, lips, ears and whole faces, with the method. Flip through it, then download the PDF.">
+<meta property="og:image" content="https://unwakingart.github.io/drawing-notebook/preview.jpg">
+<meta property="og:url" content="https://unwakingart.github.io/drawing-notebook/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;800&family=DM+Mono:wght@400&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap">
+<style>
+
+body { font: 400 15px/1.5 Figtree, system-ui, sans-serif; color: var(--ink); background: var(--ivory) url(paper.jpg) 0 0 / 900px repeat; min-height: 100vh; -webkit-font-smoothing: antialiased; }
+.mono { font: 400 11.5px 'DM Mono', monospace; letter-spacing: .16em; text-transform: uppercase; }
+header.intro { max-width: 1300px; margin: 0 auto; padding: 26px 16px 6px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: center; }
+.tape { display: inline-block; white-space: nowrap; background: var(--sage); padding: 5px 12px 4px; transform: rotate(-1.5deg); }
+h1 { font: 400 46px/1.05 Newsreader, Georgia, serif; margin-top: 12px; letter-spacing: -.01em; }
+.sub { font-size: 17px; color: #3b3d37; margin-top: 10px; max-width: 520px; }
+.sub mark { background: linear-gradient(transparent 62%, rgba(233,185,167,.95) 62%); color: inherit; padding: 0 2px; }
+header.intro img.collage { width: min(360px, 34vw); height: auto; display: block; }
+header.intro > div { min-width: 0; }
+@media (max-width: 700px) { .tape .more { display: none; } header.intro { grid-template-columns: 1fr 120px; gap: 10px; } h1 { font-size: 36px; } .sub { font-size: 15.5px; } header.intro img.collage { width: 120px; } }
+@media (min-width: 1000px) { h1 { font-size: 60px; } }
+
+:root { --sx-w: 1300px; --ivory: #F1EBDD; --ink: #292B26; --sage: #D9E2D5; --blue: #A9B9D5; --coral: #E9B9A7; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+header.intro h1, header.intro p { margin-bottom: 0; } header.intro h1 { margin-top: 12px; } header.intro .sub { margin-top: 10px; }
+a { color: inherit; }
+footer .wordmark { text-decoration: none; }
+main { max-width: 1300px; margin: 0 auto; padding: 10px 16px 60px; }
+.lbl { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+.stage { display: flex; justify-content: center; padding: 20px 0; }
+.book { box-shadow: 0 18px 40px rgba(41,43,38,.18); }
+.page { background: #fff; } .page img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.bar { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 18px; }
+.bar button { font: inherit; font-size: 15px; border: 1.5px solid var(--ink); background: transparent; color: var(--ink); border-radius: 999px; padding: 8px 16px; cursor: pointer; }
+.bar .count { font-family: 'DM Mono', monospace; font-size: 13px; min-width: 70px; text-align: center; }
+.get { margin: 0; width: 280px; flex: none; background: var(--sage); border-radius: 6px; padding: 22px; text-align: center; transform: rotate(-.6deg); position: relative; }
+.get::before { content: ''; position: absolute; top: -10px; left: 50%; width: 90px; height: 22px; margin-left: -45px; background: rgba(233,185,167,.75); transform: rotate(3deg); }
+.get a { display: inline-block; margin-top: 12px; background: var(--ink); color: var(--ivory); text-decoration: none; border-radius: 999px; padding: 12px 26px; font-weight: 600; }
+.get p { margin: 6px 0 0; font-size: 15px; }
+.hint { text-align: center; font-size: 14px; opacity: .7; margin-top: 10px; }
+.row { display: flex; align-items: center; gap: 36px; margin-top: 10px; }
+.viewer { flex: 1; min-width: 0; }
+@media (max-width: 860px) { .row { flex-direction: column; align-items: stretch; gap: 34px; } .get { width: auto; order: -1; } }
+.wordmark { font: 800 23px/1 Figtree, sans-serif; letter-spacing: -.045em; position: relative; text-decoration: none; white-space: nowrap; }
+.wordmark .i { position: relative; }
+.wordmark svg { position: absolute; left: 50%; top: .08em; width: .36em; transform: translateX(-50%); }
+footer { margin-top: 50px; background: var(--ink); color: var(--ivory); padding: 40px 20px 44px; text-align: center; }
+footer .wordmark { font-size: 34px; display: inline-block; }
+footer .mono { color: #d9d3c4; margin-top: 10px; text-transform: none; }
+footer p { margin: 18px auto 0; max-width: 640px; font-size: 13px; color: #d9d3c4; line-height: 1.6; }
+</style>
+<style id="site-menu">
+  
+  .sx-site { position: sticky; top: 0; z-index: 50; background: rgba(241,235,221,.94); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(41,43,38,.12); font-family: Figtree, system-ui, sans-serif; color: #292B26; }
+  .sx-row { max-width: var(--sx-w, 1080px); margin: 0 auto; padding: 0 20px; height: 62px; display: flex; align-items: center; gap: 28px; }
+  .sx-wm { font: 800 26px/1 Figtree, sans-serif; letter-spacing: -.045em; position: relative; text-decoration: none; color: inherit; margin-right: auto; transition: opacity .2s; }
+  .sx-wm .i { position: relative; } .sx-wm svg { position: absolute; left: 50%; top: .08em; width: .36em; transform: translateX(-50%); color: #EF7A56; }
+  .sx-nav { display: flex; gap: 26px; font: 500 15px Figtree, sans-serif; }
+  .sx-nav a { text-decoration: none; padding: 3px 0; border-bottom: 2px solid transparent; color: inherit; white-space: nowrap; }
+  .sx-nav a:hover { border-bottom-color: rgba(41,43,38,.3); }
+  .sx-n { font: italic 400 14px Newsreader, Georgia, serif; color: #5F615A; margin-right: 6px; }
+  .sx-nav a.on { border-bottom-color: #E9B9A7; font-weight: 600; }
+  .sx-soc { display: flex; gap: 12px; } .sx-soc a { color: inherit; display: flex; }
+  .sx-menu { display: none; align-items: center; gap: 8px; font: 600 14px Figtree, sans-serif; border: 1.5px solid #292B26; border-radius: 999px; padding: 8px 14px; background: transparent; color: inherit; cursor: pointer; }
+  .sx-menu i { display: block; width: 14px; height: 9px; border-top: 1.6px solid; border-bottom: 1.6px solid; position: relative; }
+  .sx-menu i::after { content: ""; position: absolute; left: 0; right: 0; top: 2.2px; border-top: 1.6px solid; }
+  .sx-cta { display: inline-flex; background: #292B26; color: #F1EBDD; text-decoration: none; font: 600 14px Figtree, sans-serif; padding: 10px 18px; border-radius: 999px; white-space: nowrap; }
+  .sx-sub { border-top: 1px dashed rgba(41,43,38,.18); }
+  .sx-sub .sx-row { height: 42px; gap: 22px; font: 400 12px 'DM Mono', monospace; letter-spacing: .14em; text-transform: uppercase; overflow-x: auto; scrollbar-width: none; }
+  .sx-sub .sx-row::-webkit-scrollbar { display: none; }
+  .sx-sub b { font-weight: 400; color: #5F615A; white-space: nowrap; }
+  .sx-sub nav { display: flex; gap: 22px; }
+  .sx-sub a { text-decoration: none; color: inherit; white-space: nowrap; padding: 4px 9px; margin: 0 -9px; }
+  .sx-sub a.on { background: #D9E2D5; }
+  .sx-sub .sx-tool { display: inline-flex; align-items: center; gap: 7px; } .sx-sub .sx-tool img { width: 18px; height: 18px; }
+  .sx-sheet { display: none; position: fixed; inset: 0; z-index: 60; background: #F1EBDD; padding: 0 20px 30px; overflow: auto; font-family: Figtree, system-ui, sans-serif; color: #292B26; }
+  .sx-sheet .sx-row { padding: 0; }
+  .sx-close { margin-left: auto; font: 600 14px Figtree, sans-serif; border: 1.5px solid #292B26; border-radius: 999px; padding: 8px 14px; background: transparent; color: inherit; cursor: pointer; }
+  .sx-way { display: block; text-decoration: none; color: inherit; padding: 20px 0 18px; border-bottom: 1px dashed rgba(41,43,38,.25); }
+  .sx-way .sx-n { display: inline-flex; width: 30px; height: 30px; border: 1.5px solid; border-radius: 50%; align-items: center; justify-content: center; font-size: 15px; color: inherit; margin-right: 12px; vertical-align: 5px; }
+  .sx-way b { font: 400 34px/1.1 Newsreader, Georgia, serif; }
+  .sx-way small { display: block; font: 400 12px 'DM Mono', monospace; letter-spacing: .14em; text-transform: uppercase; color: #5F615A; margin: 8px 0 0 42px; }
+  .sx-way.on b { background: linear-gradient(transparent 62%, rgba(233,185,167,.95) 62%); }
+  .sx-tools { margin: 6px 0 0 42px; display: grid; gap: 4px; }
+  .sx-tools a { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; font: 500 17px Figtree, sans-serif; padding: 6px 0; } .sx-tools img { width: 26px; height: 26px; }
+  .sx-follow { margin-top: 26px; display: flex; gap: 10px; } .sx-follow a { display: inline-flex; gap: 8px; align-items: center; border: 1.5px solid #292B26; border-radius: 999px; padding: 10px 16px; text-decoration: none; color: inherit; font: 600 14px Figtree, sans-serif; }
+  .sx-art { display: block; width: 78%; max-width: 420px; margin: 34px auto 0; height: auto; }
+  html.sx-open { overflow: hidden; } html.sx-open .sx-sheet { display: block; }
+  .sx-watch .sx-site .sx-wm { opacity: 0; pointer-events: none; } .sx-watch.sx-past .sx-site .sx-wm { opacity: 1; pointer-events: auto; }
+  .sx-map { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 22px 30px; max-width: 760px; margin: 28px auto 0; text-align: left; font-family: Figtree, system-ui, sans-serif; }
+  .sx-map h4 { margin: 0 0 8px; font: 400 11px 'DM Mono', monospace; letter-spacing: .16em; text-transform: uppercase; color: #bdb6a6; }
+  .sx-map a { display: block; color: #F1EBDD; text-decoration: none; font-size: 15px; padding: 3px 0; } .sx-map a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  @media (max-width: 760px) { .sx-nav, .sx-soc, .sx-sub b { display: none; } .sx-menu { display: inline-flex; } .sx-row { gap: 10px; } .sx-wm { font-size: 24px; } }
+</style>
+</head>
+<body>
+
+<header class="sx-site"><div class="sx-row">
+  <a class="sx-wm" href="https://unwakingart.github.io/" data-site aria-label="unwakingart, home">unwak<span class="i">ı<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0 C10.8 6.5 13.5 9.2 20 10 C13.5 10.8 10.8 13.5 10 20 C9.2 13.5 6.5 10.8 0 10 C6.5 9.2 9.2 6.5 10 0Z" fill="currentColor"/></svg></span>ngart</a>
+  <nav class="sx-nav" aria-label="unwakingart"><a href="https://unwakingart.github.io/hangouts/" data-site><span class="sx-n">01</span>Creative hangouts</a><a href="https://unwakingart.github.io/trips/" data-site><span class="sx-n">02</span>Study trips</a><a href="https://unwakingart.github.io/value-finder/" data-site class="on"><span class="sx-n">03</span>Free tools</a></nav>
+  <div class="sx-soc"><a href="https://www.instagram.com/unwakingart/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.tiktok.com/@unwakingart" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M16.6 3c.4 2.3 1.9 3.8 4.2 4v3.1c-1.6 0-3-.5-4.2-1.3v6.4c0 3.4-2.6 5.8-5.8 5.8S5 18.6 5 15.3c0-3.3 2.8-5.9 6.2-5.6v3.2c-1.6-.3-3 .8-3 2.4 0 1.4 1.1 2.5 2.6 2.5 1.5 0 2.6-1.1 2.6-2.6V3h3.2Z"/></svg></a></div>
+  <button class="sx-menu" type="button" aria-expanded="false" aria-controls="sx-sheet"><i></i>Menu</button>
+</div><div class="sx-sub"><div class="sx-row"><b>Free art tools</b><nav aria-label="Art tools"><a class="sx-tool" href="https://unwakingart.github.io/value-finder/" data-site><img src="https://unwakingart.github.io/value-finder/icon.png" width="18" height="18" alt="">Value Finder</a><a class="sx-tool" href="https://unwakingart.github.io/face-planes/" data-site><img src="https://unwakingart.github.io/face-planes/icon.png" width="18" height="18" alt="">Face Planes</a><a class="sx-tool on" href="https://unwakingart.github.io/drawing-notebook/" data-site aria-current="page"><img src="https://unwakingart.github.io/drawing-notebook/icon.png" width="18" height="18" alt="">Drawing notebook</a></nav></div></div></header>
+<div class="sx-sheet" id="sx-sheet" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="sx-row"><a class="sx-wm" href="https://unwakingart.github.io/" data-site aria-label="unwakingart, home">unwak<span class="i">ı<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0 C10.8 6.5 13.5 9.2 20 10 C13.5 10.8 10.8 13.5 10 20 C9.2 13.5 6.5 10.8 0 10 C6.5 9.2 9.2 6.5 10 0Z" fill="currentColor"/></svg></span>ngart</a><button class="sx-close" type="button">Close ✕</button></div>
+  <a class="sx-way" href="https://unwakingart.github.io/hangouts/" data-site><span class="sx-n">01</span><b>Creative hangouts</b><small>Makati · at a café</small></a>
+  <a class="sx-way" href="https://unwakingart.github.io/trips/" data-site><span class="sx-n">02</span><b>Art study trips</b><small>Hanoi · March 2027</small></a>
+  <div class="sx-way on"><span class="sx-n">03</span><b>Free art tools</b><div class="sx-tools"><a href="https://unwakingart.github.io/value-finder/" data-site><img src="https://unwakingart.github.io/value-finder/icon.png" width="26" height="26" alt="">Value Finder</a><a href="https://unwakingart.github.io/face-planes/" data-site><img src="https://unwakingart.github.io/face-planes/icon.png" width="26" height="26" alt="">Face Planes</a><a href="https://unwakingart.github.io/drawing-notebook/" data-site><img src="https://unwakingart.github.io/drawing-notebook/icon.png" width="26" height="26" alt="">Drawing notebook</a></div></div>
+  <div class="sx-follow"><a href="https://www.instagram.com/unwakingart/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg> Instagram</a><a href="https://www.tiktok.com/@unwakingart" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M16.6 3c.4 2.3 1.9 3.8 4.2 4v3.1c-1.6 0-3-.5-4.2-1.3v6.4c0 3.4-2.6 5.8-5.8 5.8S5 18.6 5 15.3c0-3.3 2.8-5.9 6.2-5.6v3.2c-1.6-.3-3 .8-3 2.4 0 1.4 1.1 2.5 2.6 2.5 1.5 0 2.6-1.1 2.6-2.6V3h3.2Z"/></svg> TikTok</a></div>
+  <img class="sx-art" src="https://unwakingart.github.io/images/collage-face.webp" width="860" height="460" alt="" loading="lazy">
+</div>
+<script>
+(function () {
+  var h = document.documentElement, b = document.querySelector('.sx-menu'), s = document.getElementById('sx-sheet');
+  function set(open) { h.classList.toggle('sx-open', open); b.setAttribute('aria-expanded', open); if (open) s.querySelector('.sx-close').focus(); else b.focus(); }
+  b.addEventListener('click', function () { set(true); });
+  s.querySelector('.sx-close').addEventListener('click', function () { set(false); });
+  s.addEventListener('click', function (e) { if (e.target.closest('a[href*="#"]')) set(false); });
+  document.addEventListener('keydown', function (e) {
+    if (!h.classList.contains('sx-open')) return;
+    if (e.key === 'Escape') set(false);
+    if (e.key === 'Tab') {
+      var f = s.querySelectorAll('a[href], button'), first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { last.focus(); e.preventDefault(); }
+      else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault(); }
+    }
+  });
+  var wide = window.matchMedia('(min-width: 761px)');
+  function shut() { if (wide.matches && h.classList.contains('sx-open')) { h.classList.remove('sx-open'); b.setAttribute('aria-expanded', false); } }
+  if (wide.addEventListener) wide.addEventListener('change', shut); else wide.addListener(shut);
+
+  function watch() {
+    var big = document.querySelector('.sx-home .top .wordmark');
+    if (big && 'IntersectionObserver' in window) { document.body.classList.add('sx-watch'); new IntersectionObserver(function (es) { document.body.classList.toggle('sx-past', !es[0].isIntersecting); }).observe(big); }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', watch); else watch();
+})();
+</script>
+
+<header class="intro">
+  <div>
+    <span class="mono tape">Free download<span class="more"> · Practice faces</span></span>
+    <h1>Drawing notebook</h1>
+    <p class="sub">The passport-size notebook I use to practice drawing faces: eyes, noses, lips, ears and whole portraits, with the method I follow. <mark>Flip through it first</mark>, then download it to print.</p>
+  </div>
+  <img class="collage" src="collage.webp" width="1000" height="733" alt="A collage: the kraft notebook cover, engraved eyes and an ear torn from Rubens's drawing book, on blue and sage watercolor, with a coral star">
+</header>
+<main>
+<div class="row"><div class="viewer"><div class="stage"><div class="book" id="book">
+<div class="page"><img loading="lazy" src="pages/p-01.jpg" alt="Page 1"></div><div class="page"><img loading="lazy" src="pages/p-02.jpg" alt="Page 2"></div><div class="page"><img loading="lazy" src="pages/p-03.jpg" alt="Page 3"></div><div class="page"><img loading="lazy" src="pages/p-04.jpg" alt="Page 4"></div><div class="page"><img loading="lazy" src="pages/p-05.jpg" alt="Page 5"></div><div class="page"><img loading="lazy" src="pages/p-06.jpg" alt="Page 6"></div><div class="page"><img loading="lazy" src="pages/p-07.jpg" alt="Page 7"></div><div class="page"><img loading="lazy" src="pages/p-08.jpg" alt="Page 8"></div><div class="page"><img loading="lazy" src="pages/p-09.jpg" alt="Page 9"></div><div class="page"><img loading="lazy" src="pages/p-10.jpg" alt="Page 10"></div><div class="page"><img loading="lazy" src="pages/p-11.jpg" alt="Page 11"></div><div class="page"><img loading="lazy" src="pages/p-12.jpg" alt="Page 12"></div><div class="page"><img loading="lazy" src="pages/p-13.jpg" alt="Page 13"></div><div class="page"><img loading="lazy" src="pages/p-14.jpg" alt="Page 14"></div><div class="page"><img loading="lazy" src="pages/p-15.jpg" alt="Page 15"></div><div class="page"><img loading="lazy" src="pages/p-16.jpg" alt="Page 16"></div><div class="page"><img loading="lazy" src="pages/p-17.jpg" alt="Page 17"></div><div class="page"><img loading="lazy" src="pages/p-18.jpg" alt="Page 18"></div><div class="page"><img loading="lazy" src="pages/p-19.jpg" alt="Page 19"></div><div class="page"><img loading="lazy" src="pages/p-20.jpg" alt="Page 20"></div><div class="page"><img loading="lazy" src="pages/p-21.jpg" alt="Page 21"></div><div class="page"><img loading="lazy" src="pages/p-22.jpg" alt="Page 22"></div><div class="page"><img loading="lazy" src="pages/p-23.jpg" alt="Page 23"></div><div class="page"><img loading="lazy" src="pages/p-24.jpg" alt="Page 24"></div><div class="page"><img loading="lazy" src="pages/p-25.jpg" alt="Page 25"></div><div class="page"><img loading="lazy" src="pages/p-26.jpg" alt="Page 26"></div><div class="page"><img loading="lazy" src="pages/p-27.jpg" alt="Page 27"></div><div class="page"><img loading="lazy" src="pages/p-28.jpg" alt="Page 28"></div><div class="page"><img loading="lazy" src="pages/p-29.jpg" alt="Page 29"></div><div class="page"><img loading="lazy" src="pages/p-30.jpg" alt="Page 30"></div><div class="page"><img loading="lazy" src="pages/p-31.jpg" alt="Page 31"></div><div class="page"><img loading="lazy" src="pages/p-32.jpg" alt="Page 32"></div><div class="page"><img loading="lazy" src="pages/p-33.jpg" alt="Page 33"></div><div class="page"><img loading="lazy" src="pages/p-34.jpg" alt="Page 34"></div><div class="page"><img loading="lazy" src="pages/p-35.jpg" alt="Page 35"></div><div class="page"><img loading="lazy" src="pages/p-36.jpg" alt="Page 36"></div><div class="page"><img loading="lazy" src="pages/p-37.jpg" alt="Page 37"></div><div class="page"><img loading="lazy" src="pages/p-38.jpg" alt="Page 38"></div><div class="page"><img loading="lazy" src="pages/p-39.jpg" alt="Page 39"></div><div class="page"><img loading="lazy" src="pages/p-40.jpg" alt="Page 40"></div><div class="page"><img loading="lazy" src="pages/p-41.jpg" alt="Page 41"></div><div class="page"><img loading="lazy" src="pages/p-42.jpg" alt="Page 42"></div>
+</div></div>
+<div class="bar"><button id="prev" type="button">← Back</button><span class="count" id="count">1 / 42</span><button id="next" type="button">Next →</button></div>
+<p class="hint">Swipe or tap the corner of a page to turn it.</p>
+</div><div class="get"><div class="lbl">[ the notebook ]</div><p>42 pages · PDF · 4 MB · free</p><a href="Drawing%20notebook.pdf" download data-goatcounter-click="notebook-download">Download the PDF</a><p>Photos from Pexels and Unsplash. The method follows Daniel Burge and Will Davies.</p></div></div>
+</main>
+<footer>
+  <a class="wordmark" href="https://unwakingart.github.io/" data-site aria-label="unwakingart">unwak<span class="i">ı<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0 C10.8 6.5 13.5 9.2 20 10 C13.5 10.8 10.8 13.5 10 20 C9.2 13.5 6.5 10.8 0 10 C6.5 9.2 9.2 6.5 10 0Z" fill="currentColor"/></svg></span>ngart</a>
+  <div class="mono">a little outside the lines</div>
+  <p>Reference photos from Pexels and Unsplash, credited on each page. Collage: eyes and an ear from Rubens's drawing book, Rijksmuseum (public domain). The drawing method follows the tutorials of Daniel Burge (@danielburgeart) and Will Davies (@willdaviesart).</p>
+  <div class="sx-map"><div><h4>Creative hangouts</h4><a href="https://unwakingart.github.io/hangouts/" data-site>The hangout</a><a href="https://unwakingart.github.io/hangouts/#tickets" data-site>Dates &amp; fee</a></div><div><h4>Art study trips</h4><a href="https://unwakingart.github.io/trips/" data-site>Oil Painting in Hanoi</a><a href="https://unwakingart.github.io/trips/#payment" data-site>How to apply</a></div><div><h4>Free art tools</h4><a href="https://unwakingart.github.io/value-finder/" data-site>Value Finder</a><a href="https://unwakingart.github.io/face-planes/" data-site>Face Planes</a><a href="https://unwakingart.github.io/drawing-notebook/" data-site>Drawing notebook</a></div><div><h4>About</h4><a href="https://unwakingart.github.io/michelle/" data-site>My art journey</a></div><div><h4>Follow</h4><a href="https://www.instagram.com/unwakingart/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@unwakingart" target="_blank" rel="noopener">TikTok</a></div></div>
+  <p>@unwakingart on <a href="https://www.instagram.com/unwakingart/" target="_blank" rel="noopener">Instagram</a> and <a href="https://www.tiktok.com/@unwakingart" target="_blank" rel="noopener">TikTok</a></p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+<script>
+const pf = new St.PageFlip(document.getElementById('book'), { width: 258, height: 357, size: 'stretch', minWidth: 200, maxWidth: 420, minHeight: 277, maxHeight: 581, showCover: true, mobileScrollSupport: false, maxShadowOpacity: .4 });
+pf.loadFromHTML(document.querySelectorAll('.page'));
+const c = document.getElementById('count'); pf.on('flip', e => c.textContent = (e.data + 1) + ' / 42');
+document.getElementById('prev').onclick = () => pf.flipPrev(); document.getElementById('next').onclick = () => pf.flipNext();
+</script>
+</body>
+</html>
